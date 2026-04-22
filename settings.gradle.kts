@@ -1,4 +1,4 @@
-rootProject.name = "valtimo-plugin-template"
+rootProject.name = "value-mapper-plugin"
 include(
     "backend",
     "backend:app",

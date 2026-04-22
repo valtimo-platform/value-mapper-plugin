@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2025 Ritense BV, the Netherlands.
+ * Copyright 2015-2026 Ritense BV, the Netherlands.
  *
  * Licensed under EUPL, Version 1.2 (the "License");
  * you may not use this file except in compliance with the License.
@@ -60,7 +60,9 @@ open class ValueMapper(
         businessKey: String,
     ) {
         val mapperDefinition =
-            requireNotNull(templateService.getDefinition(definitionKey)) { "No Mapper Definitions found with id $definitionKey" }
+            requireNotNull(
+                templateService.getDefinition(definitionKey),
+            ) { "No Mapper Definitions found with id $definitionKey" }
 
         documentService
             .get(businessKey)
@@ -85,7 +87,9 @@ open class ValueMapper(
         inputObject: Map<String, Any>,
     ): Any {
         val mapperDefinition =
-            requireNotNull(templateService.getDefinition(definitionId)) { "No Mapper Definitions found with id $definitionId" }
+            requireNotNull(
+                templateService.getDefinition(definitionId),
+            ) { "No Mapper Definitions found with id $definitionId" }
         val inputNode: ObjectNode = mapper.convertValue(inputObject)
 
         val mappingResult = inputNode.applyMapperDefinition(mapperDefinition)
@@ -246,7 +250,8 @@ open class ValueMapper(
                 .takeUnless { it.isMissingNode }
 
         if (sourceValue != null) {
-            val spelContext = buildValueMapperCommandSpELContext(inputNode = this, outputNode = outputNode, sourceValue = sourceValue)
+            val spelContext =
+                buildValueMapperCommandSpELContext(inputNode = this, outputNode = outputNode, sourceValue = sourceValue)
 
             if (command.skipCondition != null && spelProcessor.isExpression(command.skipCondition)) {
                 val skipCommand = spelProcessor.process<Boolean>(command.skipCondition, context = spelContext)
@@ -332,7 +337,11 @@ open class ValueMapper(
                                 transformation.canTransform(this)
                             }?.let {
                                 if (it is CopyTransformation && it.skipCondition != null) {
-                                    val skipTransform = spelProcessor.process<Boolean>(it.skipCondition, context = spelContext)
+                                    val skipTransform =
+                                        spelProcessor.process<Boolean>(
+                                            it.skipCondition,
+                                            context = spelContext,
+                                        )
                                     if (skipTransform == true) {
                                         logger.debug {
                                             "Skipping transformation: Skip Condition evaluated to \"true\""
@@ -480,7 +489,9 @@ open class ValueMapper(
                             else -> currentNode.replace(nextKey, nextNode)
                         }
 
-                    else -> throw ValueMapperMappingException("Failed to build stucture in target Node for path $targetPath")
+                    else -> throw ValueMapperMappingException(
+                        "Failed to build stucture in target Node for path $targetPath",
+                    )
                 }
         }
 
