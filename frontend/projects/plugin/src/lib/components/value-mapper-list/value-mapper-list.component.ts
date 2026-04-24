@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2024 Ritense BV, the Netherlands.
+ * Copyright 2015-2026 Ritense BV, the Netherlands.
  *
  * Licensed under EUPL, Version 1.2 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,13 +17,28 @@
 import {ChangeDetectionStrategy, Component, OnInit, ViewChild,} from '@angular/core';
 import {BehaviorSubject, filter, map, Observable, switchMap, take} from 'rxjs';
 import {ActivatedRoute, Router} from '@angular/router';
-import {CarbonListComponent, ColumnConfig, ViewType} from '@valtimo/components';
+import {CarbonListComponent, CarbonListModule, ColumnConfig, ViewType} from '@valtimo/components';
 import {ValueMapperService} from "../../service/value-mapper.service";
 import {ValueMapperListItem} from "../../models";
+import {AsyncPipe, NgTemplateOutlet} from '@angular/common';
+import {TranslatePipe} from '@ngx-translate/core';
+import {ButtonModule, IconModule} from 'carbon-components-angular';
+import {ValueMapperAddEditModalComponent} from '../value-mapper-add-edit-modal/value-mapper-add-edit-modal.component';
+import {ValueMapperDeleteModalComponent} from '../value-mapper-delete-modal/value-mapper-delete-modal.component';
 
 @Component({
-    templateUrl: './value-mapper-list.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
+  templateUrl: './value-mapper-list.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [
+    CarbonListModule,
+    NgTemplateOutlet,
+    AsyncPipe,
+    TranslatePipe,
+    ButtonModule,
+    IconModule,
+    ValueMapperAddEditModalComponent,
+    ValueMapperDeleteModalComponent
+  ]
 })
 export class ValueMapperListComponent implements OnInit {
     @ViewChild(CarbonListComponent) carbonList: CarbonListComponent;

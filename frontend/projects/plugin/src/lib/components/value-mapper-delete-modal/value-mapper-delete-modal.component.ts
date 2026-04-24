@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2023 Ritense BV, the Netherlands.
+ * Copyright 2015-2026 Ritense BV, the Netherlands.
  *
  * Licensed under EUPL, Version 1.2 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,11 +16,15 @@
 
 import {ChangeDetectionStrategy, Component, EventEmitter, Input, Output} from '@angular/core';
 import {Observable} from 'rxjs';
+import {ConfirmationModalModule} from '@valtimo/components';
 
 @Component({
   selector: 'valtimo-value-mapper-delete-modal',
   templateUrl: './value-mapper-delete-modal.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [
+    ConfirmationModalModule
+  ]
 })
 export class ValueMapperDeleteModalComponent {
   @Input() deleteRowKeys: Array<string>;

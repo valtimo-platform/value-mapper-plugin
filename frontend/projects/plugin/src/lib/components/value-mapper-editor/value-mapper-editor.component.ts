@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2023 Ritense BV, the Netherlands.
+ * Copyright 2015-2026 Ritense BV, the Netherlands.
  *
  * Licensed under EUPL, Version 1.2 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ import {TemplateResponse} from "../../models";
     changeDetection: ChangeDetectionStrategy.OnPush,
     styleUrls: ['./value-mapper-editor.component.scss'],
     providers: [NotificationService],
+    standalone: false,
 })
 export class ValueMapperEditorComponent implements OnInit, AfterViewInit, OnDestroy {
     public readonly model$ = new BehaviorSubject<EditorModel | null>(null);

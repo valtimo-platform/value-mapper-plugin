@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2023 Ritense BV, the Netherlands.
+ * Copyright 2015-2026 Ritense BV, the Netherlands.
  *
  * Licensed under EUPL, Version 1.2 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,10 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 import {CommonModule} from '@angular/common';
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {ROLE_ADMIN} from '@valtimo/config';
+import {ROLE_ADMIN} from '@valtimo/shared';
 import {AuthGuardService} from '@valtimo/security';
 import {ValueMapperEditorComponent} from "./components/value-mapper-editor/value-mapper-editor.component";
 

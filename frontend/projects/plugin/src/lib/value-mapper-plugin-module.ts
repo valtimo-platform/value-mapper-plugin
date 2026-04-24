@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2024. Ritense BV, the Netherlands.
+ * Copyright 2015-2026 Ritense BV, the Netherlands.
  *
  * Licensed under EUPL, Version 1.2 (the "License");
  * you may not use this file except in compliance with the License.
@@ -9,12 +9,9 @@
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" basis,
- *
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied.
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- *
  */
 
 import {NgModule} from '@angular/core';
@@ -28,7 +25,8 @@ import {
     EditorModule,
     FormModule,
     InputModule as ValtimoInputModule,
-    ParagraphModule, RenderInPageHeaderDirectiveModule,
+    ParagraphModule,
+    RenderInPageHeaderDirective,
     SelectModule,
 } from '@valtimo/components';
 import {
@@ -54,42 +52,42 @@ import {
 import {
     ValueMapperDeleteModalComponent
 } from "./components/value-mapper-delete-modal/value-mapper-delete-modal.component";
-import {CASE_MANAGEMENT_TAB_TOKEN} from "@valtimo/config";
+import {CASE_MANAGEMENT_TAB_TOKEN} from "@valtimo/shared";
 import {TranslateModule} from "@ngx-translate/core";
 
 @NgModule({
   declarations: [
     ValueMapperConfigurationComponent,
       ProcessMappingComponent,
-      ValueMapperListComponent,
-      ValueMapperEditorComponent,
-      ValueMapperAddEditModalComponent,
-      ValueMapperDeleteModalComponent
+      ValueMapperEditorComponent
   ],
-    imports: [
-        CommonModule,
-        PluginTranslatePipeModule,
-        ValueMapperManagementRoutingModule,
-        FormModule,
-        ParagraphModule,
-        SelectModule,
-        ConfirmationModalModule,
-        TranslateModule,
-        ReactiveFormsModule,
-        CarbonListModule,
-        EditorModule,
-        ValtimoInputModule,
-        ButtonModule,
-        DialogModule,
-        DropdownModule,
-        IconModule,
-        InputModule,
-        LoadingModule,
-        ModalModule,
-        NotificationModule,
-        RenderInPageHeaderDirectiveModule,
-        TabsModule,
-    ],
+  imports: [
+    CommonModule,
+    PluginTranslatePipeModule,
+    ValueMapperManagementRoutingModule,
+    FormModule,
+    ParagraphModule,
+    SelectModule,
+    ConfirmationModalModule,
+    TranslateModule,
+    ReactiveFormsModule,
+    CarbonListModule,
+    EditorModule,
+    ValtimoInputModule,
+    ButtonModule,
+    DialogModule,
+    DropdownModule,
+    IconModule,
+    InputModule,
+    LoadingModule,
+    ModalModule,
+    NotificationModule,
+    RenderInPageHeaderDirective,
+    TabsModule,
+    ValueMapperAddEditModalComponent,
+    ValueMapperListComponent,
+    ValueMapperDeleteModalComponent,
+  ],
   exports: [
     ValueMapperConfigurationComponent,
       ProcessMappingComponent,
