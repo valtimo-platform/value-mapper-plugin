@@ -9,4 +9,4 @@ Waarden transformeren tussen JSON-objecten.
 
 ## Contact
 
-Ayub Abdulkader (Ritense)
+Haiko van der Schaaf (Ritense)
