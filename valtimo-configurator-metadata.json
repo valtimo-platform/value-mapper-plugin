@@ -1,0 +1,18 @@
+{
+    "name": "value-mapper",
+    "version": 1,
+    "backend": [
+        {
+            "import": "com.ritense.valtimoplugins:value-mapper"
+        }
+    ],
+    "frontend": {
+        "import": "@valtimo-plugins/value-mapper",
+        "codeAdditions": [
+            {
+                "spec": "valueMapperPluginSpecification",
+                "module": "ValueMapperPluginModule"
+            }
+        ]
+    }
+}
