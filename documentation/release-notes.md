@@ -3,6 +3,10 @@
 Overzicht van wijzigingen per versie van de Value Mapper-plugin. Backend (`com.ritense.valtimoplugins:valuemapper`) en
 frontend (`@valtimo-plugins/value-mapper`) worden onder hetzelfde versienummer uitgebracht.
 
+## 2.0.3
+
+Ondersteuning voor Valtimo 13.48.0.
+
 ## 2.0.2
 
 Valtimo bijgewerkt naar versie 13.41.0.
